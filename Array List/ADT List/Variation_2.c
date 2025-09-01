@@ -71,7 +71,9 @@ int main (){
     } while (operation != 0);
 }
 
-void initialize(EPtr L){ L->count = 0; }
+void initialize(EPtr L){ 
+    L->count = 0; 
+}
 
 void insertPos(EPtr L, int data, int position){
     if(position < 0 || position > L->count){
