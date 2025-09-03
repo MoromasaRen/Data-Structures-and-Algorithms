@@ -29,17 +29,23 @@ int main (){
     List *list = initialize();
     insertLast(list, 2);
     insertLast(list, 6);
-    insertLast(list, 5);  
+    insertLast(list, 5);
 
     insertFirst(list, 7);
     insertLast(list, 7);
     insertPos(list, 7, 2);
+    display(list);
+    
     deleteFirst(list);
     deleteLast(list);
     deletePos(list, 1);
+
+    printf("Retrieved index 1: %d\n", retrieve(list, 1));
+    printf("Locate data 6: %d\n", locate(list, 6));
+    printf("After Deleting: ");
     display(list);
-    retrieve(list, 1);
-    locate(list, 6);    
+    empty(list);
+
     return 0;
 }
 
@@ -57,7 +63,16 @@ List* initialize(){
 }
 
 void empty(List *list){
-    int i;
+    Node *current = list->head;
+    Node *temp;
+    while(current != NULL){
+        temp = current;
+        current = current->next;
+        free(temp);
+    }
+    list->head = NULL;
+    list->count = 0;
+
 }
 
 void insertFirst(List *list, int data){
@@ -82,7 +97,6 @@ void insertLast(List *list, int data){
     while(current->next != NULL){
         current = current->next;
     }
-
     current->next = newNode;
     list->count++;
 
