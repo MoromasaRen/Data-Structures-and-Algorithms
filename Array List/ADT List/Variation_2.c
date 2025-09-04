@@ -110,10 +110,11 @@ int locate(EPtr L, int data){
 }
 
 int retrieve(EPtr L, int position){
-    if (position >= 0 && position < L->count) {
-        return L->elem[position];
+    if(position >= L->count || position < 0){
+        printf("Invalid Position.");
+        return -1;
     }
-    return -1;
+    return L->elem[position];    
 }
 
 void insertSorted(EPtr L, int data){
