@@ -17,8 +17,13 @@ void display(Stack* stackPtr);
 int main (){
 
     Stack *S = initialize();
+    push(S, 1);
+    push(S, 3);
+    push(S, 2);
+    push(S, 5);
+    display(S);
+    push(S, 4);
 
-    
     return 0;
 }
 
@@ -44,7 +49,7 @@ int pop(Stack* stackPtr){
         return -1;
     }
 
-    int value = stackPtr->top;  
+    int value = stackPtr->items[stackPtr->top];  
     stackPtr->top--;
     return value;
 }
@@ -65,8 +70,15 @@ void display(Stack* stackPtr){
     }
 
     int i;
-    for(i = stackPtr->top; i > stackPtr->top; i--){
-        printf("items: [ %d, ", stackPtr->items)
+    printf("items: [");
+    for(i = stackPtr->top; i >= 0; i--){
+        printf("%d", stackPtr->items[i]);
+        if(i > 0){
+            printf(", ");
+        }
     }
+    printf("]\n");
+
+    printf("top: %d", stackPtr->top);
 }
 
