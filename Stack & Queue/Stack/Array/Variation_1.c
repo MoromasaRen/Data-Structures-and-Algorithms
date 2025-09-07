@@ -17,7 +17,6 @@ int pop(Stack* s);
 int peek(Stack* s);
 void display(Stack* s);
 
-
 int main (){
 
     Stack *S = initialize();
@@ -43,7 +42,7 @@ int main (){
                 if(!isEmpty(S)){
                     printf("Top element is %d\n", peek(S));
                 } else {
-                    printf("Stack is empty.");
+                    printf("Stack is empty.\n");
                 }
                 break;
             case 4:
@@ -86,7 +85,7 @@ void push(Stack* s, int value){
 }
 
 int pop(Stack* s){
-    if(s->top == -1){
+    if(isEmpty(s)){
         printf("Stack is empty.\n");
         return -1;
     }
@@ -97,15 +96,16 @@ int pop(Stack* s){
 }
 
 int peek(Stack* s){
-    if(s->top == -1){
-        return -1;
+    if(isEmpty(s)){
+        printf("Stack is empty.\n");
+        return 1;
     }
     return s->items[s->top];
 
 }
 
 void display(Stack* s){
-    if(s->top == -1){
+    if(isEmpty(s)){
         printf("Stack is empty.\n");
         return;
     }
