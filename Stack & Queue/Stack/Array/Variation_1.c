@@ -81,7 +81,6 @@ void push(Stack* s, int value){
     } 
     s->top++;
     s->items[s->top] = value;
-
 }
 
 int pop(Stack* s){
@@ -101,7 +100,6 @@ int peek(Stack* s){
         return 1;
     }
     return s->items[s->top];
-
 }
 
 void display(Stack* s){
