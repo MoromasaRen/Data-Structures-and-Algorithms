@@ -22,7 +22,7 @@ int main (){
     Stack *S = initialize();
     int num, choice;
     do{
-        printf("Menu:\n[1]: Push\n[2]: Pop\n[3]: Peek\n[4]: Display\n[0]: Exit\n");
+        printf("\nMenu:\n[1]: Push\n[2]: Pop\n[3]: Peek\n[4]: Display\n[0]: Exit\n");
         printf("Enter Choice: ");
         scanf("%d", &choice);
 

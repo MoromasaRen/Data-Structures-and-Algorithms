@@ -11,7 +11,7 @@ typedef struct {
 
 Stack* initialize();
 bool isFull(Stack* s);
-void isEmpty(Stack* s);
+bool isEmpty(Stack* s);
 void push(Stack* s, int value);
 int pop(Stack* s);
 int peek(Stack* s);
@@ -21,13 +21,44 @@ void display(Stack* s);
 int main (){
 
     Stack *S = initialize();
-    push(S, 1);
-    push(S, 3);
-    push(S, 2);
-    push(S, 5);
-    display(S);
+    int num, choice;
+    do{
+        printf("\nMenu:\n[1]: Push\n[2]: Pop\n[3]: Peek\n[4]: Display\n[0]: Exit\n");
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
 
+        switch (choice){
+            case 1:
+                printf("Enter a number: ");
+                scanf("%d", &num);
+                push(S, num);
+                break;
+            case 2:
+                num = pop(S);
+                if(num != -1){
+                    printf("%d popped\n", num);
+                }
+                break;
+            case 3:
+                if(!isEmpty(S)){
+                    printf("Top element is %d\n", peek(S));
+                } else {
+                    printf("Stack is empty.\n");
+                }
+                break;
+            case 4:
+                display(S);
+                break;
+            case 0:
+                printf("Exiting...");
+                free(S);
+                exit(0);
+            default:
+                printf("Invalid Choice!\n");
+        }
+    } while(choice != 0);
     return 0;
+
 }
 
 Stack* initialize(){
@@ -37,55 +68,49 @@ Stack* initialize(){
 }
 
 bool isFull(Stack* s){
-    if(s->top == 0){
-        printf("Stack is full.");
-        return -1;
-    }
-    return 0;
+    return (s->top == 0) ? true : false;
 }
 
-void isEmpty(Stack* s){
-    if(s->top == MAX){
-        printf("Stack is empty.");
-    }
+bool isEmpty(Stack* s){
+    return (s->top == MAX) ? true : false;
 }
 
 void push(Stack* s, int value){
-    if(s->top == 0){
-        printf("Stack is full.");
-        return;
+    if(isFull(s)){
+        printf("Stack is full.\n");
     }
     s->top--;
     s->items[s->top] = value;
 }
 
 int pop(Stack* s){
-    if(s->top == MAX){
-        printf("Stack is empty.");
+    if(isEmpty(s)){
+        printf("Stack is empty.\n");
         return -1;
     }
+
     int value = s->items[s->top];
     s->top++;
     return value;
-
 }
 
 int peek(Stack* s){
-    if(s->top == MAX){
-        printf("Stack is empty.");
-        return -1;
+    if(isEmpty(s)){
+        printf("Stack is empty.\n");
+        return 1;
     }
+
     return s->items[s->top];
 
 }
 
 void display(Stack* s){
-    if(s->top == MAX){
-        printf("Stack is empty.");
+    if(isEmpty(s)){
+        printf("Stack is empty.\n");
         return;
     }
-    printf("items: [");
     int i;
+    printf("items: [");
     for(i = s->top; i < MAX; i++){
         printf("%d", s->items[i]);
         if(i < MAX - 1){
@@ -94,5 +119,4 @@ void display(Stack* s){
     }
     printf("]\n");
     printf("top = %d\n", s->top);
-    
 }
