@@ -15,6 +15,7 @@ bool isEmpty(Stack* s);
 void push(Stack* s, int value);
 int pop(Stack* s);
 int peek(Stack* s);
+int top(Stack* s);
 void display(Stack* s);
 
 int main (){
@@ -100,6 +101,10 @@ int peek(Stack* s){
         return 1;
     }
     return s->items[s->top];
+}
+
+int top(Stack* s){
+    return s->top;
 }
 
 void display(Stack* s){
