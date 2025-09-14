@@ -8,9 +8,8 @@ typedef struct Node {
 } Node;
 
 typedef struct Queue {
-    Node *top;
-    int front;
-    int rear;
+    Node* front;
+    Node* rear;
 } Queue;
 
 Queue* initialize();
@@ -82,7 +81,7 @@ bool isEmpty(Queue* q){
 void enqueue(Queue* q, int value){
     Node* newNode = malloc(sizeof(Node));
     newNode->data = value;
-    newNode->data = NULL;
+    newNode->next = NULL;
 
     if(isEmpty(q)){
         q->front = newNode;
@@ -99,8 +98,8 @@ int dequeue(Queue* q){
         return -1;
     }
     
-    Node* temp = q->top;
-    int value = q->top->data;
+    Node* temp = q;
+    int value = q->rear->data;
     q->front = temp->next;
     if(isEmpty(q)){
         q->rear = NULL;
