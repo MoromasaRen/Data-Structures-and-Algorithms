@@ -75,11 +75,11 @@ Queue* initialize(){
 }
 
 bool isFull(Queue* q){
-    return (q->list.count == MAX) ? true : false;
+    return (q->list.count == MAX);
 }
 
 bool isEmpty(Queue* q){
-    return(q->list.count == 0) ? true : false;
+    return(q->list.count == 0);
 }
 
 void enqueue(Queue* q, int value){
@@ -92,7 +92,7 @@ void enqueue(Queue* q, int value){
         q->front = 0;
         q->rear = 0;
     } else {
-        q->rear = (q->rear + 1)% MAX;
+        q->rear = (q->rear + 1) % MAX;
         q->list.items[q->rear] = value;
         q->rear++;
         q->list.count++;
