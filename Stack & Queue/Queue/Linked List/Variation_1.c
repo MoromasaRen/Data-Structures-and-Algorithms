@@ -2,15 +2,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MAX 10
+typedef struct Node {
+    int data;
+    struct Node* next;
+} Node;
 
-typedef struct {
-    int items[MAX];
-    int count;
-} List;
-
-typedef struct {
-    List list;
+typedef struct Queue {
+    Node *top;
     int front;
     int rear;
 } Queue;
@@ -65,3 +63,71 @@ int main (){
 
     return 0;
 }
+
+Queue* initialize(){
+    Queue* newQueue = malloc(sizeof(Queue));
+    newQueue->front = NULL;
+    newQueue->rear = NULL;
+    return newQueue;
+}
+
+bool isFull(Queue* q){
+    return false;
+}
+
+bool isEmpty(Queue* q){
+    return (q->front == NULL);
+}
+
+void enqueue(Queue* q, int value){
+    Node* newNode = malloc(sizeof(Node));
+    newNode->data = value;
+    newNode->data = NULL;
+
+    if(isEmpty(q)){
+        q->front = newNode;
+        q->rear = newNode;
+    } else {
+        q->rear = newNode;
+    }
+    q->rear = newNode;
+}
+
+int dequeue(Queue* q){
+    if(isEmpty(q)){
+        printf("Queue is empty.\n");
+        return -1;
+    }
+    
+    Node* temp = q->top;
+    int value = q->top->data;
+    q->front = temp->next;
+    if(isEmpty(q)){
+        q->rear = NULL;
+    }
+    free(temp);
+    return value;
+}
+
+int front(Queue* q){
+    if(isEmpty(q)){
+        printf("Queue is empty.\n");
+        return -1;
+    }
+    return q->top->data;
+}
+
+void display(Queue* q){
+    if(isEmpty(q)){
+        printf("Queue is empty.\n");
+        return;
+    }
+    Node* temp = q->top;
+    printf("front -> ");
+    for(int i = 0; temp != NULL; i++){
+        printf("%d ->", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
