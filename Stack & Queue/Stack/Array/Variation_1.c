@@ -20,10 +20,10 @@ void display(Stack* s);
 
 int main (){
 
-    Stack *S = initialize();
+    Stack *s = initialize();
     int num, choice;
     do{
-        printf("\nMenu:\n[1]: Push\n[2]: Pop\n[3]: Peek\n[4]: Display\n[0]: Exit\n");
+        printf("\nMenu:\n[1]: Push\n[2]: Pop\n[3]: Peek\n[4]: Top\n[5]: Display\n[0]: Exit\n");
         printf("Enter Choice: ");
         scanf("%d", &choice);
 
@@ -31,27 +31,30 @@ int main (){
             case 1:
                 printf("Enter a number: ");
                 scanf("%d", &num);
-                push(S, num);
+                push(s, num);
                 break;
             case 2:
-                num = pop(S);
+                num = pop(s);
                 if(num != -1){
                     printf("%d popped\n", num);
                 }
                 break;
             case 3:
-                if(!isEmpty(S)){
-                    printf("Top element is %d\n", peek(S));
+                if(!isEmpty(s)){
+                    printf("Top element is %d\n", peek(s));
                 } else {
                     printf("Stack is empty.\n");
                 }
                 break;
             case 4:
-                display(S);
+                int topval = top(s);
+                printf("Top Value = %d\n", topval);
+            case 5:
+                display(s);
                 break;
             case 0:
                 printf("Exiting...");
-                free(S);
+                free(s);
                 exit(0);
             default:
                 printf("Invalid Choice!\n");

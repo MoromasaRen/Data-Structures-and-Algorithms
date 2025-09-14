@@ -93,10 +93,10 @@ void enqueue(Queue* q, int value){
         q->rear = 0;
     } else {
         q->rear = (q->rear + 1) % MAX;
-        q->list.items[q->rear] = value;
-        q->rear++;
-        q->list.count++;
     }
+    q->list.items[q->rear] = value;
+    q->list.count++;
+
 }
 
 int dequeue(Queue* q){
@@ -106,9 +106,10 @@ int dequeue(Queue* q){
     }
 
     int value = q->list.items[q->front];
-    if(isFull(q)){
+    if(q->list.count == 1){
         q->front = -1;
         q->rear = -1;
+        q->list.count = 0;
     } else {
         q->front = (q->front + 1) % MAX;
         q->list.count--;
@@ -131,11 +132,17 @@ void display(Queue* q){
     }
     int i;
     printf("items: [");
-    for(i = q->front; i < q->rear; i++){
-        printf("%d", q->list.items[i]);
-        if(i < 0){
+    for(i = 0; i < q->list.count; i++){
+        int index = (q->front + 1) % MAX;
+        printf("%d", q->list.items[index]);
+        if(i < q->list.count - 1){
             printf(", ");
         }
     }
+        
     printf("]\n");
+    printf("count: %d\n", q->list.count);
+    printf("front: %d\n", q->front);
+    printf("rear: %d\n", q->rear);
+
 }
