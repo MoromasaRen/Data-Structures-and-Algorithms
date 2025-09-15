@@ -1,11 +1,10 @@
 ### Activity 1 Instructions
 
-<img src="https://github.com/MoromasaRen/Data-Structures-and-Algorithms/blob/main/Stack%20%26%20Queue/Activities/Assets/image.png" alt="Activity Image">
+<img src="https://github.com/MoromasaRen/Data-Structures-and-Algorithms/blob/main/Stack%20%26%20Queue/Activities/Assets/Activity_1.png" alt="Activity Image">
 
 
 ### Sample Outputs
 ---
-
 <pre>
 Sample Output 1<br>
 <br>
