@@ -33,4 +33,5 @@ int peek(Stack *s);
 int top(Stack *s);
 void display(Stack* s);
 
-<img src = "../Assets/image.png" width = "100">
+
+<img src="../Assets/image.png" width="100"> ```
