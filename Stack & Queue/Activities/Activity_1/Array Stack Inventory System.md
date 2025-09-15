@@ -34,8 +34,9 @@ int top(Stack *s);
 void display(Stack* s);
 ```c
 
-Outputs
+## Outputs
 
+```
 Sample Output 1
 --- Warehouse Inventory Management System ---
 1. Push a container
@@ -231,7 +232,7 @@ Container 15 popped successfully.
 2. Pop a container
 3. Check if a container exists
 4. Display all stacks
-5. Exit
+5. Exit 
 Enter your choice: 4
 
 --- Stack 1 ---
