@@ -129,7 +129,7 @@ int peek(Stack* s){
 
     if(isEmpty(s)){
         printf("Stack is empty.\n");
-        return 1;
+        return -1;
     }
     return s->items[s->top];
 }
