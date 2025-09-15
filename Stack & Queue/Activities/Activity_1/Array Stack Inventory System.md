@@ -1,37 +1,3 @@
-# Array Stack - Warehouse Inventory System  
-*by Edwin Bartlett*
-
----
-
-## Description
-
-Design a C program for a simplified warehouse inventory management system.  
-This system will track stacks of containers, adhering to specific storage and retrieval rules to manage space efficiently. The program will be interactive, allowing a user to manage the inventory through a simple menu.
-
----
-
-## Key Features
-
-- The system will use **three separate stacks** to store containers. Think of them as physical columns where containers are placed on top of one another.
-- Each of the three stacks has a strict capacity limit of **5 containers**.
-- When a user attempts to add a new container to a stack that is already full, the program must automatically switch to the **next available stack**. This process continues until all three stacks are full.
-- Each container is uniquely identified by an integer ID. The program will not need to validate if these IDs are unique, but it should use this ID to perform operations like searching for a container.
-
----
-
-## Constraints
-
-You can only use the following functions to interact with the stacks. Place these in `arrayStack.h`:
-
-```c
-void initialize(Stack *s);
-bool isFull(Stack *s);
-bool isEmpty(Stack *s);
-void push(Stack *s, int value);
-int pop(Stack *s);
-int peek(Stack *s);
-int top(Stack *s);
-void display(Stack* s);
 
 ```
 <img src="https://github.com/MoromasaRen/Data-Structures-and-Algorithms/blob/main/Stack%20%26%20Queue/Activities/Assets/image.png" >
