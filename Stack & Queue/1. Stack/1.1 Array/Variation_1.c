@@ -145,7 +145,7 @@ void display(Stack* s){
     Iterate from the top of the stack down to the bottom (index 0)
     Print each element
     */
-   
+
     if(isEmpty(s)){
         printf("Stack is empty.\n");
         return;
@@ -159,5 +159,6 @@ void display(Stack* s){
         }
     }
     printf("]\n");
-    printf("top: %d\n", s->top);
+    printf("top: %d\n", top(s));
+    printf("value of top: %d\n", peek(s));
 }
