@@ -141,5 +141,5 @@ void display(EPtr L){
 }
 
 void makeNULL(EPtr L){
-    L->count = 0; 
+    return free(L); 
 }
