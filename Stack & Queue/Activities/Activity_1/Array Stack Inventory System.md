@@ -33,6 +33,8 @@ int peek(Stack *s);
 int top(Stack *s);
 void display(Stack* s);
 
+## Constraints
+```c
 Sample Output 1
 --- Warehouse Inventory Management System ---
 1. Push a container
@@ -249,3 +251,5 @@ Stack is empty.
 5. Exit
 Enter your choice: 5
 Exiting program.
+
+---
