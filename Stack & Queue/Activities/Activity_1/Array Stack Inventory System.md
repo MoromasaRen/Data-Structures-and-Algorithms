@@ -34,9 +34,9 @@ int top(Stack *s);
 void display(Stack* s);
 ```c
 
-## Outputs
 
 ```
+## Outputs
 Sample Output 1
 --- Warehouse Inventory Management System ---
 1. Push a container
