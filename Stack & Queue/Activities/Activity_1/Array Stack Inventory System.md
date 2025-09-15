@@ -32,8 +32,9 @@ int pop(Stack *s);
 int peek(Stack *s);
 int top(Stack *s);
 void display(Stack* s);
+```c
 
-## Constraints
+Outputs
 ```c
 Sample Output 1
 --- Warehouse Inventory Management System ---
@@ -252,4 +253,4 @@ Stack is empty.
 Enter your choice: 5
 Exiting program.
 
----
+```c
