@@ -35,7 +35,7 @@ void display(Stack* s);
 ```c
 
 Outputs
-```c
+
 Sample Output 1
 --- Warehouse Inventory Management System ---
 1. Push a container
@@ -253,4 +253,3 @@ Stack is empty.
 Enter your choice: 5
 Exiting program.
 
-```c
