@@ -10,11 +10,12 @@ typedef struct {
 typedef struct {
     HeapSpace H;
     int avail;
-}; VHeap;
+} VHeap;
 
 typedef int List;
 
-void initialize(Vheap *V);
+//Function Prototypes
+void initialize(VHeap *V);
 int allocSpace(VHeap* V);
 void deallocSpace(VHeap* V, int index);
 void insertFirst(int* L, VHeap* V, int elem);
@@ -26,18 +27,23 @@ void display(int L, VHeap V);
 
 int main (){
 
-    VHeap* V = initialize(V);
+    VHeap* V;
+    initialize(V);
 
     return 0;
 }
 
+// Functions
+void initialize(VHeap *V){
 
-void initialize(Vheap *V){
-    
 }
 
 int allocSpace(VHeap* V){
-
+    int ret = V->avail;
+    if(ret != -1){
+        V->avail = V->H[ret].next;
+    }
+    return ret;
 }
 
 void deallocSpace(VHeap* V, int index){
@@ -45,7 +51,12 @@ void deallocSpace(VHeap* V, int index){
 }
 
 void insertFirst(int* L, VHeap* V, int elem){
-
+    int newCell = allocSpace(&V);
+    if(newCell != -1){
+        V->H[newCell].elem = elem;
+        V->H[newCell].next = *L;
+    }
+    *L = newCell;
 }
 
 void insertLast(int* L, VHeap* V, int elem){

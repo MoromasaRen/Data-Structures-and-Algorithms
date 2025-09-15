@@ -113,7 +113,7 @@ int front(Queue* q){
         printf("Queue is empty.\n");
         return -1;
     }
-    return q->top->data;
+    return q->front->data;
 }
 
 void display(Queue* q){
@@ -121,7 +121,7 @@ void display(Queue* q){
         printf("Queue is empty.\n");
         return;
     }
-    Node* temp = q->top;
+    Node* temp = q;
     printf("front -> ");
     for(int i = 0; temp != NULL; i++){
         printf("%d ->", temp->data);
