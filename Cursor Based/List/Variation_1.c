@@ -35,7 +35,12 @@ int main (){
 
 // Functions
 void initialize(VHeap *V){
-
+    int i;
+    V->avail = 0;
+    for(i = V->avail; i < MAX - 1; i++){
+        V->H[i].next = i + 1;
+    }
+    V->H[i].next = -1;
 }
 
 int allocSpace(VHeap* V){
@@ -47,7 +52,10 @@ int allocSpace(VHeap* V){
 }
 
 void deallocSpace(VHeap* V, int index){
-
+    if(index < MAX - 1 &&  index >= 0){
+        V->H[index].next = V->avail;
+        V->avail = index;
+    }
 }
 
 void insertFirst(int* L, VHeap* V, int elem){
@@ -74,9 +82,27 @@ void insertLast(int* L, VHeap* V, int elem){
 
 void insertSorted(int* L, VHeap* V, int elem){
 
+
 }
 
-void delete(int* L, VHeap* V, int elem);
-void deleteAllOccurrence(int* L, VHeap* V, int elem);
-void display(int L, VHeap V);
+void delete(int* L, VHeap* V, int elem){
+    int *trav, temp;
+    trav = L;
 
+    for(int i = 0; *trav != -1 && V->H[*trav].elem != elem; i++){
+        trav = V->H[*trav].next;
+    }
+    if(*trav != -1){
+        temp = *trav;
+        *trav = V->H[temp].next;
+        deallocSpace(V, temp);
+    }
+}
+
+void deleteAllOccurrence(int* L, VHeap* V, int elem){
+
+}
+
+void display(int L, VHeap V){
+    
+}

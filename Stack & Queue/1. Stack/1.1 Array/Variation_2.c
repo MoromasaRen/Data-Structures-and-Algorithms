@@ -123,7 +123,7 @@ int pop(Stack* s){
 
 int peek(Stack* s){
     /*
-    Check if the stack is empty (top == -1)
+    Check if the stack is empty (top == MAX)
     Return the value at the top of the stack
     */
 
@@ -141,7 +141,7 @@ int top(Stack* s){
 
 void display(Stack* s){
     /*
-    Check if the stack is empty (top == -1)
+    Check if the stack is empty (top == MAX)
     Iterate from the top of the stack down to the bottom (index 0)
     Print each element
     */

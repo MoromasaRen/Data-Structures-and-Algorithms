@@ -10,6 +10,7 @@ typedef struct {
     int rear;
 } Queue;
 
+// Function Prototypes
 Queue* initialize();
 bool isEmpty(Queue* q);
 bool isFull(Queue* q);
@@ -61,7 +62,13 @@ int main (){
     return 0;
 }
 
+// Functions
 Queue* initialize(){
+    /*
+    Allocate memory for the Queue structure
+    Initialize front to 1 and rear to 0
+    */
+
     Queue *newQueue = malloc(sizeof(Queue));
     newQueue->front = 1;
     newQueue->rear = 0;
@@ -69,14 +76,22 @@ Queue* initialize(){
 }
 
 bool isEmpty(Queue* q){
+    // Queue is empty if front == (rear + 1) % MAX
     return (q->front == (q->rear + 1) % MAX);
 }
 
 bool isFull(Queue* q){
+    // Queue is full if front == (rear + 2) % MAX
     return (q->front == (q->rear + 2) % MAX);
 }
 
 void enqueue(Queue* q, int value){
+    /*
+    Check if the queue is full
+    Increment the rear pointer circularly (rear = (rear + 1) % MAX)
+    Insert the new element at the new rear position
+    */
+
     if(isFull(q)){
         printf("Queue is full.\n");
         return;
@@ -87,6 +102,13 @@ void enqueue(Queue* q, int value){
 }
 
 int dequeue(Queue* q){
+    /*
+    Check if the queue is empty
+    Get the element at the front of the queue
+    Increment the front pointer circularly (front = (front + 1) % MAX)
+    Return the dequeued element
+    */
+
     if(isEmpty(q)){
         printf("Queue is empty.\n");
         return -1;
@@ -98,6 +120,11 @@ int dequeue(Queue* q){
 }
 
 int front(Queue* q){
+    /*
+    Check if the queue is empty
+    Return the element at the current front position
+    */
+
     if(isEmpty(q)){
         printf("Queue is empty.\n");
         return -1;
@@ -106,6 +133,11 @@ int front(Queue* q){
 }
 
 void display(Queue* q){
+    /*
+    Check if the queue is empty
+    Loop through the queue from front to rear and print each element
+    */
+   
     if(isEmpty(q)){
         printf("Queue is empty.\n");
         return;
