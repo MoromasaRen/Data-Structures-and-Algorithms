@@ -13,7 +13,7 @@ typedef struct {
 
 List* initialize();
 Node* createNode(int data);
-void insertFirst(List *L, int data);
+void isertnFirst(List *L, int data);
 void insertLast();
 void insertAt();
 void insertSorted();

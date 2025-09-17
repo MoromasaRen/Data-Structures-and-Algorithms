@@ -18,10 +18,9 @@ void display(EPtr L);
 void makeNULL(EPtr L);
 
 int main (){
-    EPtr L = (EPtr) malloc(sizeof(Etype));
-    if (!L) return 1;
-
+    EPtr L = (EPtr)malloc(sizeof(Etype));
     initialize(L);
+
     L->elem[0] = 1;
     L->elem[1] = 3;
     L->elem[2] = 2;
