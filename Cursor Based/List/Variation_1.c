@@ -116,6 +116,15 @@ void insertLast(int* L, VHeap* V, int elem){
 }
 
 void insertSorted(int* L, VHeap* V, int elem){
+    /*
+    Allocate a new cell
+    Check if allocation was successful
+    Set the element of the new cell
+    Use a pointer to traverse the list
+    Stop when the next element is greater than or equal to the new element
+    Update the new cell’s next to point to the current cell
+    Update the previous cell’s next to point to the new cell
+    */
 
     int newCell = allocSpace(V);
     if(newCell != -1){
@@ -131,9 +140,11 @@ void insertSorted(int* L, VHeap* V, int elem){
 
 void delete(int* L, VHeap* V, int elem){
     /*
-    Use a pointer to traverse to the cell with the element to delete
-    Update previous cell’s next to point to current cell’s next
-    Deallocate current cell
+    Use a pointer to traverse the list
+    Stop when the element is found or the end of the list is reached
+    If found, store the index of the current cell
+    Update the previous cell’s next to skip the current cell
+    Deallocate the current cell to return it to the free list
     */
 
     int *trav, temp;
@@ -150,6 +161,16 @@ void delete(int* L, VHeap* V, int elem){
 }
 
 void deleteAllOccurrence(int* L, VHeap* V, int elem){
+    /*
+    Use a pointer to traverse the list
+    For each cell, check if the element matches the target value
+    If it matches:
+        - Save the index of the current cell
+        - Update the previous cell’s next to skip the current cell
+        - Deallocate the current cell to return it to the free list
+    Otherwise, move to the next cell
+    Repeat until the end of the list is reached
+    */
 
     int *trav = L, temp;
     
@@ -168,6 +189,7 @@ void display(int L, VHeap V){
     /*
     Print all cell values in correct order starting from List head until next is -1
     */
+   
     for(int i = L; i != -1; V.H[i].next){
         printf("%d ", V.H[i].elem);
     }
