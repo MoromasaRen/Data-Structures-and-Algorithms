@@ -170,7 +170,7 @@ void display(Queue* q){
     int i;
     printf("items: [");
     for(i = 0; i < q->list.count; i++){
-        int index = (q->front + 1) % MAX;
+        int index = (q->front + i) % MAX;
         printf("%d", q->list.items[index]);
         if(i < q->list.count - 1){
             printf(", ");
