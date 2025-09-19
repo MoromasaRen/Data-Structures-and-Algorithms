@@ -145,7 +145,7 @@ void display(Queue* q){
     int i;
     printf("items: [");
     int count = (q->rear - q->front + MAX) % MAX;
-
+ 
     for(i = 0; i < count; i++){
         int index = (q->front + i) % MAX;
         printf("%d", q->items[index]);

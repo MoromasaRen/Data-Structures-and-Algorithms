@@ -69,7 +69,7 @@ int main (){
 Stack* initialize(){
     /*  
     Allocate memory for a Stack structure
-    Initialize the top of the stack to -1 to indicate it's empty
+    Initialize the top of the stack to MAX to indicate it's empty
     Return the pointer to the stack 
     */
 
