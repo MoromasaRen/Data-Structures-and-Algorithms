@@ -164,7 +164,7 @@ void display(Queue* q){
     Node* temp = q->front;
     printf("front -> ");
     for(int i = 0; temp != NULL; i++){
-        printf("%d ->", temp->data);
+        printf("%d -> ", temp->data);
         temp = temp->next;
     }
     printf("NULL\n");

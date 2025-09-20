@@ -70,8 +70,8 @@ Queue* initialize(){
     */
 
     Queue *newQueue = malloc(sizeof(Queue));
-    newQueue->front = 1;
-    newQueue->rear = 0;
+    newQueue->front = 0;
+    newQueue->rear = -1;
     return newQueue;
 }
 
