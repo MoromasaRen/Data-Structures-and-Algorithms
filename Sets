@@ -1,0 +1,15 @@
+Sets
+
+Operations:
+isMember
+insert - make sure its unique
+Assign - make set b have the same elems as set a
+MIN - return smallest num
+MAX - return largest num
+equal - 
+find - 
+delete - 
+
+Implementations: 
+Array List - dynamic or static
+Linked List - singly doubly
