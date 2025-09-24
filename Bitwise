@@ -1,0 +1,41 @@
+#include <stdio.h>
+// NEEDS FIXING
+
+int findFourth(char val);
+void displayBit(char val);
+
+int main (){
+    
+    char val;
+    
+    printf("Enter a value: ");
+    scanf(" %c", &val);
+    
+    // int result = findFourth(val);
+    // if(result){
+    //     printf("Fourth is 1.\n");
+    // } else {
+    //     printf("Fourth is 0.\n");
+    // }
+    
+    displayBit(val);
+    
+    return 0;
+}
+
+// int findFourth(char val){
+//     return (val >> 3) & 1;
+// }
+
+
+void displayBit(char val){
+    printf("Binary Representation:\n");
+    int bits = sizeof(char) * 8;
+    unsigned int mask = 1 << (bits - 1);
+    
+    while (mask != 0){
+        printf("%d ", (val & mask) ? 1 : 0);
+        mask >>= 1;
+    }
+    printf("\n");
+}
