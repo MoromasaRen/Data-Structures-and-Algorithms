@@ -1,0 +1,38 @@
+Bit Vector
+
+Variation a:
+using a Char - holding an integer to represent a Set
+saves logic for displaying and doesnt use an array
+dont need to traverse through whole array
+
+Variation b:
+Using bit fields inside a structure
+#define MAX 20
+typdef struct {
+unsinged int MAX;
+} Set
+
+1: 1, 0
+2: 00, 01, 11, 10
+3: 000, 001, 011, 010, 110, 111, 101, 100
+
+Variation C:
+Using an enum datatype
+typedef enum {true, false} Boolean;
+typdef Boolean Set [MAX];
+
+Set -> [ 1, 0, 1, 0, 1];
+
+Array Set
+
+[ 3, 4 ,1, ]
+
+Bit Vector Set
+[0, 1, 0, 1, 1, 0]
+
+Bit Set
+
+Char X = 49 -> 0 0 1 1 0 0 0 1
+Set = {1, 5, 6}
+
+
