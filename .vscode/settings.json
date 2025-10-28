@@ -60,6 +60,7 @@
     "variation_1": "c",
     "activity-arraylistmaam_p": "c",
     "stdlib.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "Array.c": "c"
   }
 }
