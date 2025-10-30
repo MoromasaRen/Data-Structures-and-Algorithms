@@ -61,6 +61,8 @@
     "activity-arraylistmaam_p": "c",
     "stdlib.h": "c",
     "string.h": "c",
-    "Array.c": "c"
+    "Array.c": "c",
+    "stdbool.h": "c",
+    "type_traits": "c"
   }
 }

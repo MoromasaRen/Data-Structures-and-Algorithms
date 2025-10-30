@@ -21,15 +21,15 @@ int main (){
     initDictionary(Dict);
 
     insertDictionary(Dict, 10);
-    insertDictionary(Dict, 20);
-    insertDictionary(Dict, 30);
-    insertDictionary(Dict, 40);
-    insertDictionary(Dict, 50);
-    insertDictionary(Dict, 60);
-    insertDictionary(Dict, 70);
-    insertDictionary(Dict, 80);
-    insertDictionary(Dict, 90);
-    insertDictionary(Dict, 100);
+    insertDictionary(Dict, 22);
+    insertDictionary(Dict, 33);
+    insertDictionary(Dict, 42);
+    insertDictionary(Dict, 55);
+    insertDictionary(Dict, 62);
+    insertDictionary(Dict, 75);
+    insertDictionary(Dict, 86);
+    insertDictionary(Dict, 97);
+    insertDictionary(Dict, 99);
     
     display(Dict);
     
@@ -41,6 +41,8 @@ int main (){
     }
     
     deleteData(Dict, 10);
+    
+    insertDictionary(Dict, 10);
     display(Dict);
 
     return 0;
