@@ -21,14 +21,27 @@ void deallocSpace(VHeap* V, int index);
 void insertFirst(int* L, VHeap* V, int elem);
 void insertLast(int* L, VHeap* V, int elem);
 void insertSorted(int* L, VHeap* V, int elem);
-void delete(int* L, VHeap* V, int elem);
+void deleteElem(int* L, VHeap* V, int elem);
 void deleteAllOccurrence(int* L, VHeap* V, int elem);
 void display(int L, VHeap V);
 
 int main (){
-
-    VHeap* V;
+    VHeap V;    
+    List L = -1;
     initialize(&V);
+
+    insertFirst(&L, &V, 30);
+    insertFirst(&L, &V, 10);
+    insertLast(&L, &V, 50);
+    insertSorted(&L, &V, 20);
+
+    display(L, V);
+
+    deleteElem(&L, &V, 20);
+    display(L, V);
+
+    deleteAllOccurrence(&L, &V, 10);
+    display(L, V);
 
     return 0;
 }
@@ -89,8 +102,8 @@ void insertFirst(int* L, VHeap* V, int elem){
     if(newCell != -1){
         V->H[newCell].elem = elem;
         V->H[newCell].next = *L;
+        *L = newCell;
     }
-    *L = newCell;
 }
 
 void insertLast(int* L, VHeap* V, int elem){
@@ -138,7 +151,7 @@ void insertSorted(int* L, VHeap* V, int elem){
     }
 }
 
-void delete(int* L, VHeap* V, int elem){
+void deleteElem(int* L, VHeap* V, int elem){
     /*
     Use a pointer to traverse the list
     Stop when the element is found or the end of the list is reached
@@ -151,7 +164,7 @@ void delete(int* L, VHeap* V, int elem){
     trav = L;
 
     while(*trav != -1 && V->H[*trav].elem != elem){
-        trav = V->H[*trav].next;
+        trav = &V->H[*trav].next;
     }
     if(*trav != -1){
         temp = *trav;
@@ -175,7 +188,7 @@ void deleteAllOccurrence(int* L, VHeap* V, int elem){
     int *trav = L, temp;
     
     while(*trav != -1){
-        if(V->H[*trav].elem = elem){
+        if(V->H[*trav].elem == elem){
             temp = *trav;
             *trav = V->H[temp].next;
             deallocSpace(V, temp);
@@ -190,7 +203,7 @@ void display(int L, VHeap V){
     Print all cell values in correct order starting from List head until next is -1
     */
    
-    for(int i = L; i != -1; V.H[i].next){
+    for(int i = L; i != -1; i = V.H[i].next){
         printf("%d ", V.H[i].elem);
     }
     printf("\n");
