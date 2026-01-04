@@ -14,7 +14,7 @@ typedef struct {
 
 typedef int List;
 
-//Function Prototypes
+// Function Prototypes
 void initialize(VHeap *V);
 int allocSpace(VHeap* V);
 void deallocSpace(VHeap* V, int index);
