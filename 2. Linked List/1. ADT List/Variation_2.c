@@ -12,6 +12,7 @@ typedef struct {
     int count;
 } List;
 
+// Variation 2
 List* initialize();
 void empty(List *list);
 void insertFirst(List *list, int data);
