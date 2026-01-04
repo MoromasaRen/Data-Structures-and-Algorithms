@@ -10,7 +10,7 @@ typedef struct {
     int rear;
 } Queue;
 
-// Function Prototypes
+// Function Prototypes for Variation 2
 Queue* initialize();
 bool isEmpty(Queue* q);
 bool isFull(Queue* q);
