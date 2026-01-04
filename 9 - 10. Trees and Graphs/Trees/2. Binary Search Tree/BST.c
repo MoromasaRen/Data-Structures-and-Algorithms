@@ -18,10 +18,12 @@ void insertTree(Tree* T, int data);
 NodePTR deleteNode(NodePTR root, int data);
 void deleteTree(Tree T);
 NodePTR search(Tree T, int data);
+// DFS
 void Preorder(Tree T);
 void Inorder(Tree T);
 void Postorder(Tree T);
-// void BFS(Tree T);
+// BFS
+void BFS(Tree T);
 
 int main (){
     Tree T;
@@ -55,7 +57,13 @@ int main (){
     Inorder(T);
     printf("\n");
 
+    printf("===== BFS =====\n");
+    printf("BFS: ");
+    BFS(T);
+    printf("\n");
+
     deleteTree(T);
+    T = NULL;
 
     return 0;    
 }
@@ -152,17 +160,19 @@ void Postorder(Tree T){
     printf("%d ", T->data);
 }
 
-// void BFS(Tree T){
-//     if(T == NULL) return;
+void BFS(Tree T){
+    if(T == NULL) return;
 
-//     Queue q;
-//     initQueue(&q);
-//     enqueue(&q, T);
+    NodePTR q[100];
+    int front = 0, rear = 0;
 
-//     while(!isEmpty(&q)){
-//         NodePTR current = dequeue(&q);
-//         printf("%d ", current->data);
+    q[rear++] = T;
 
-//         if(current->left) enqueue()
-//     }
-// }
+    while(front < rear){
+        NodePTR current = q[front++];
+        printf("%d ", current->data);
+
+        if(current->left != NULL)  q[rear++] = current->left;
+        if(current->right != NULL) q[rear++] = current->right;
+    }
+}
