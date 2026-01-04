@@ -2,17 +2,17 @@ DSA Notes
 Topics:
 
 Test 1:
-Array List
-Linked List
-Stack (Array & LL)
-Queue (Array & LL)
+Array List <br>
+Linked List <br>
+Stack (Array & LL)<br>
+Queue (Array & LL)<br>
 
 Test 2:
-CB List
-BV Set
-Open & Closed Hashing (Internal & External)
+CB List<br>
+BV Set<br>
+Open & Closed Hashing (Internal & External)<br>
 
 Test 3:
-Priority Queue
-Heap Sort
-Binary Tree - BFS, DFS, Operations
+Priority Queue<br>
+Heap Sort<br>
+Binary Tree - BFS, DFS, Operations<br>
